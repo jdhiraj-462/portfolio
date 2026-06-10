@@ -1176,11 +1176,12 @@ html{scrollbar-color:#C9A227 #0E1C30}
         </div>
       </div>
 
-      <!-- Photo: keep dhiraj_photo.jpg in the same folder as index.html.
-           If the file is missing, the DJ initials show automatically. -->
+      <!-- Photo: keep dhiraj_photo.png (or dhiraj_photo.jpg) in the same folder as index.html.
+           Tries PNG first, then JPG; if neither exists, the DJ initials show automatically. -->
       <div class="portrait-wrap">
         <div class="portrait">
-          <img class="p-img" src="dhiraj_photo.jpg" alt="Dhiraj Jadhav — portrait" onerror="this.remove()">
+          <img class="p-img" src="dhiraj_photo.png" alt="Dhiraj Jadhav — portrait"
+               onerror="if(!this.dataset.t){this.dataset.t='1';this.src='dhiraj_photo.jpg';}else{this.remove();}">
           <span class="init serif">DJ</span>
           <span class="hint">Dhiraj Jadhav</span>
         </div>
