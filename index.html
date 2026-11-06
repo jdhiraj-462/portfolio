@@ -140,6 +140,7 @@ nav.scrolled .nav-inner{
 .nav-links li:nth-child(5){animation-delay:.43s}
 .nav-links li:nth-child(6){animation-delay:.5s}
 .nav-links li:nth-child(7){animation-delay:.57s}
+.nav-links li:nth-child(8){animation-delay:.64s}
 @keyframes navIn{from{opacity:0;transform:translateY(-12px)}to{opacity:1;transform:none}}
 .nav-links a:not(.nav-cta){
   text-decoration:none;color:var(--d-sub);font-size:.83rem;font-weight:500;letter-spacing:.04em;
@@ -889,6 +890,33 @@ footer .mono{letter-spacing:.14em}
 .doc-meta{font-family:'IBM Plex Mono',monospace;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:20px}
 .doc-btn{justify-content:center}
 
+/* articles : same card system as publications */
+#articles{
+  background:
+    radial-gradient(800px 420px at 90% 0%,rgba(201,162,39,.12),transparent 60%),
+    linear-gradient(175deg,#0A1626 0%,#0F2138 100%);
+  color:var(--d-text);
+}
+#articles::before{
+  content:"";position:absolute;inset:0;pointer-events:none;opacity:.6;
+  background-image:repeating-linear-gradient(90deg,transparent 0 79px,rgba(255,255,255,.025) 79px 80px);
+}
+#articles .eyebrow{color:var(--gold-bright)}
+#articles h2{color:var(--d-text)}
+#articles .sec-intro{color:var(--d-sub)}
+.nl-box{
+  display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;
+  border-radius:var(--radius);padding:26px 28px;margin-bottom:30px;
+  background:rgba(255,255,255,.045);border:1px solid rgba(217,185,92,.45);
+}
+.nl-name{font-family:'Spectral',serif;font-size:1.3rem;font-weight:600;color:var(--white);margin-top:10px}
+.nl-desc{font-size:.92rem;color:var(--d-sub);margin-top:6px;max-width:640px}
+.nl-meta{font-family:'IBM Plex Mono',monospace;font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--d-muted);margin-top:10px}
+.art-empty{color:var(--d-sub);font-size:.95rem}
+.art-more a{color:var(--gold-bright);font-weight:600;text-decoration:none}
+.art-more a:hover{text-decoration:underline}
+@media (max-width:680px){.nl-box{padding:20px 18px}}
+
 /* premium polish: scrollbar + selection */
 ::selection{background:rgba(217,185,92,.85);color:#10213A}
 html{scrollbar-color:#C9A227 #0E1C30}
@@ -1156,6 +1184,7 @@ html{scrollbar-color:#C9A227 #0E1C30}
       <li><a href="#leadership">Leadership</a></li>
       <li><a href="#research">Research</a></li>
       <li><a href="#education">Education</a></li>
+      <li><a href="#articles">Articles</a></li>
       <li>
         <div class="lang-sw" aria-label="Language">
           <button class="lsw on" data-lang="en">EN</button>
@@ -1224,7 +1253,7 @@ html{scrollbar-color:#C9A227 #0E1C30}
       <div class="stat anim" data-anim="scale"><div class="num"><span data-count="14">0</span></div><div class="lbl">Research publications</div></div>
       <div class="stat anim d1" data-anim="scale"><div class="num"><span data-count="1">0</span></div><div class="lbl">Best Paper Award · CITIC 2026</div></div>
       <div class="stat anim d2" data-anim="scale"><div class="num">8.00<span class="sm"> /10</span></div><div class="lbl">Current CGPA</div></div>
-      <div class="stat anim d3" data-anim="scale"><div class="num"><span data-count="15">0</span><span class="sm">+</span></div><div class="lbl">Professional certifications</div></div>
+      <div class="stat anim d3" data-anim="scale"><div class="num"><span data-count="17">0</span><span class="sm">+</span></div><div class="lbl">Professional certifications</div></div>
     </div>
 
     <!-- scroll cue removed per request -->
@@ -1613,12 +1642,22 @@ html{scrollbar-color:#C9A227 #0E1C30}
 
     <!-- Certification cards — concise course summaries and credential links. -->
     <div class="cert-meta anim" data-anim="up">
-      <div class="cm-item"><b><span data-count="15">0</span></b><span>Certifications</span></div>
-      <div class="cm-item"><b><span data-count="11">0</span></b><span>Institutions</span></div>
-      <div class="cm-item"><b><span data-count="13">0</span></b><span>Learning domains</span></div>
+      <div class="cm-item"><b><span data-count="17">0</span></b><span>Certifications</span></div>
+      <div class="cm-item"><b><span data-count="14">0</span></b><span>Institutions</span></div>
+      <div class="cm-item"><b><span data-count="15">0</span></b><span>Learning domains</span></div>
       <div class="cm-item"><b>2026</b><span>Most recent</span></div>
     </div>
     <div class="cert-grid">
+      <div class="cert-card anim" data-anim="left">
+        <div class="c-logo">TB</div>
+        <div class="c-mid"><p class="c-name">Global Leader<wbr>ship and Personal Develop<wbr>ment</p><p class="c-org">Thunderbird School of Global Management, Arizona State University · Nov 2026</p><p class="c-org" data-course-description>Leading across cultures and personal growth.</p><span class="c-tag">Global Leadership</span></div>
+        <!-- Add verify link when available: <a class="verify" href="URL" target="_blank" rel="noopener">Verify ↗</a> -->
+      </div>
+      <div class="cert-card anim" data-anim="right">
+        <div class="c-logo">EY</div>
+        <div class="c-mid"><p class="c-name">AI Skills Passport</p><p class="c-org" title="Credential ID: d3cbf439cd8e445fb5d8ae4937a75bfd">EY (Ernst &amp; Young) and Microsoft · Oct 2026</p><p class="c-org" data-course-description>Practical AI skills for everyday work.</p><span class="c-tag">AI Skills</span></div>
+        <a class="verify" href="https://gsp.ey.com/shared-certificate/d3cbf439cd8e445fb5d8ae4937a75bfd" target="_blank" rel="noopener">Verify ↗</a>
+      </div>
       <div class="cert-card anim" data-anim="left">
         <div class="c-logo">OU</div>
         <div class="c-mid"><p class="c-name">Becoming an Ethical Researcher</p><p class="c-org" title="Credential ID: c1a65be90efddb77ed150c39a07fd2534f50643c">The Open University · Oct 2026</p><p class="c-org" data-course-description>Research ethics, integrity, and responsible practice.</p><span class="c-tag">Research Ethics</span></div>
@@ -1806,11 +1845,28 @@ html{scrollbar-color:#C9A227 #0E1C30}
   </div>
 </section>
 
+<!-- ================= ARTICLES ================= -->
+<section id="articles" class="on-dark">
+  <div class="wrap">
+    <div class="sec-head anim" data-anim="up">
+      <span class="ghost" aria-hidden="true">09</span>
+      <p class="eyebrow">09 — Articles</p>
+      <h2>Articles</h2>
+      <p class="sec-intro">Articles, newsletter editions, and opinion pieces published on LinkedIn and Medium. Academic papers are listed separately under Research.</p>
+    </div>
+    <div class="nl-box anim" data-anim="up" id="nlBox" hidden></div>
+    <div class="pub-grid anim" data-anim="up" id="artList"></div>
+    <div>
+      <p class="art-more research-foot">More writing on <a href="https://www.linkedin.com/in/jdhiraj462" target="_blank" rel="noopener">LinkedIn</a> and <a href="https://medium.com/@jdhiraj462" target="_blank" rel="noopener">Medium</a>.</p>
+    </div>
+  </div>
+</section>
+
 <!-- ================= PHILOSOPHY ================= -->
 <section id="philosophy">
   <div class="wrap">
     <div class="sec-head anim" data-anim="up" style="text-align:center">
-      <p class="eyebrow" style="justify-content:center">09 — Philosophy</p>
+      <p class="eyebrow" style="justify-content:center">10 — Philosophy</p>
       <h2>Professional philosophy</h2>
     </div>
     <div class="philo anim" data-anim="scale">
@@ -1825,7 +1881,7 @@ html{scrollbar-color:#C9A227 #0E1C30}
 <section id="documents">
   <div class="wrap">
     <div class="sec-head anim" data-anim="up" style="text-align:center">
-      <p class="eyebrow" style="justify-content:center">10 — Documents</p>
+      <p class="eyebrow" style="justify-content:center">11 — Documents</p>
       <h2>Resume & CV</h2>
       <p class="sec-intro" style="margin:26px auto 0">A quick overview of my background is available in three formats — a concise one-page resume for fast screening, a detailed academic CV with the complete record of publications, certifications, and engagements, and a standardised Europass CV for European applications. Download whichever fits your purpose.</p>
     </div>
@@ -1865,7 +1921,7 @@ html{scrollbar-color:#C9A227 #0E1C30}
 <section id="contact" class="on-dark">
   <div class="wrap">
     <div class="anim" data-anim="up">
-      <p class="eyebrow">11 — Contact</p>
+      <p class="eyebrow">12 — Contact</p>
       <h2>Let's connect</h2>
       <p class="lead">Open to conversations about research collaboration and opportunities across operations, strategy, and business management.</p>
       <div class="contact-row">
@@ -2030,7 +2086,13 @@ let _rebuildTick = 0;
   requestAnimationFrame(breathe);
 })();
 let rsT;
-addEventListener('resize', () => { clearTimeout(rsT); rsT = setTimeout(buildThread, 200); });
+// mobile browsers fire resize when the address bar shows/hides during scroll;
+// rebuild only on a real width change, otherwise just re-check the height
+let _lastW = document.documentElement.clientWidth;
+addEventListener('resize', () => { clearTimeout(rsT); rsT = setTimeout(() => {
+  const w = document.documentElement.clientWidth;
+  if (w !== _lastW) { _lastW = w; buildThread(); } else { maybeRebuild(); tTargetY = null; updateThread(); }
+}, 200); });
 addEventListener('load', () => { buildThread(); setTimeout(buildThread, 600); setTimeout(buildThread, 1800); });
 buildThread();
 
@@ -2196,6 +2258,81 @@ const hio = new IntersectionObserver(entries => {
 document.querySelectorAll('.sec-head').forEach(el => hio.observe(el));
 </script>
 <script>
+/* ================= ARTICLES & NEWSLETTER : edit here =================
+   New LinkedIn editions are added automatically to articles.json
+   (same folder as this page) by the Gmail automation script.
+   The list below is a built-in fallback: it shows when articles.json
+   cannot load (e.g. opening the file locally). Both lists are merged,
+   duplicates are removed by URL, and newest items show first.
+   date: YYYY-MM-DD · platform: "LinkedIn" or "Medium" · type: "Newsletter" or "Article"
+   summary is optional. */
+const NEWSLETTER = {
+  name: "The Executive Brief",
+  description: "Your daily briefing on AI, management, business & leadership — trusted by professionals who think big.",
+  frequency: "Published daily · 1,612 subscribers",
+  url: "https://www.linkedin.com/newsletters/the-executive-brief-7449421438790533121/"
+};
+const ARTICLES = [
+  { title: "The Pursuit of Academic Excellence: Are We Losing the Art of Asking Questions?", date: "2026-11-05", platform: "LinkedIn", type: "Newsletter", url: "https://www.linkedin.com/pulse/pursuit-academic-excellence-we-losing-art-asking-questions-jadhav-5p9rf", summary: "" },
+  { title: "Can India become a global research and innovation powerhouse by 2047?", date: "2026-10-31", platform: "LinkedIn", type: "Newsletter", url: "https://www.linkedin.com/pulse/can-india-become-global-research-innovation-2047-dhiraj-jadhav-ld7if", summary: "" },
+  { title: "The Quiet Crisis in Organisational Leadership: No One Is Measuring", date: "2026-10-16", platform: "LinkedIn", type: "Newsletter", url: "https://www.linkedin.com/pulse/quiet-crisis-organisational-leadership-one-measuring-dhiraj-jadhav-lvmlf", summary: "" },
+  // { title: "Article title", date: "2026-11-02", platform: "LinkedIn", type: "Newsletter", url: "https://www.linkedin.com/pulse/...", summary: "One or two lines." },
+];
+/* ===================================================================== */
+(function(){
+  const list = document.getElementById('artList');
+  const box = document.getElementById('nlBox');
+  if (!list) return;
+  const MON = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const fmt = d => { const p = String(d).split('-'); return p.length === 3 ? (+p[2]) + ' ' + MON[+p[1]-1] + ' ' + p[0] : d; };
+  const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
+  const link = (cls, text, url) => { const a = el('a', cls, text); a.href = url; a.target = '_blank'; a.rel = 'noopener'; return a; };
+
+  if (NEWSLETTER.name) {
+    const left = el('div');
+    left.appendChild(el('span','venue-pill','Newsletter'));
+    left.appendChild(el('p','nl-name',NEWSLETTER.name));
+    if (NEWSLETTER.description) left.appendChild(el('p','nl-desc',NEWSLETTER.description));
+    if (NEWSLETTER.frequency) left.appendChild(el('p','nl-meta',NEWSLETTER.frequency + ' · LinkedIn'));
+    box.appendChild(left);
+    if (NEWSLETTER.url) box.appendChild(link('btn btn-gold','Subscribe ↗',NEWSLETTER.url));
+    box.hidden = false;
+  }
+
+  const key = u => String(u || '').split('?')[0].replace(/\/comm\//,'/').replace(/\/+$/,'').toLowerCase();
+  function render(source){
+    const seen = new Set();
+    const items = source.filter(a => a && a.title && a.url && !seen.has(key(a.url)) && seen.add(key(a.url)))
+                        .sort((a,b) => String(b.date).localeCompare(String(a.date)));
+    list.textContent = '';
+    if (!items.length) { list.appendChild(el('p','art-empty','New articles and newsletter editions will appear here.')); return; }
+    items.forEach((a, i) => {
+      const card = el('div','pub-card art-card');
+      card.appendChild(el('span','pc-no',String(items.length - i).padStart(2,'0')));
+      card.appendChild(el('p','pc-title',a.title));
+      const meta = el('div','pc-meta');
+      if (a.platform) meta.appendChild(el('span','venue-pill',a.platform));
+      if (a.type) meta.appendChild(el('span','venue-pill plain',a.type));
+      meta.appendChild(el('span','pc-year',fmt(a.date)));
+      meta.appendChild(link('pc-link','Read article ↗',a.url));
+      card.appendChild(meta);
+      list.appendChild(card);
+    });
+  }
+  render(ARTICLES);
+  // live list from articles.json (same site, no third-party request)
+  fetch('articles.json', {cache:'no-store'})
+    .then(r => r.ok ? r.json() : [])
+    .then(data => {
+      if (!Array.isArray(data) || !data.length) return;
+      render(data.concat(ARTICLES));
+      const lang = document.documentElement.lang;
+      if (window.applyLang && lang && lang !== 'en') window.applyLang(lang);
+    })
+    .catch(() => {});
+})();
+</script>
+<script>
 /* ================= i18n : EN · DE · FR · IT · ES ================= */
 (function(){
 const ROT = {
@@ -2310,7 +2447,26 @@ const D = {
     "AI Literacy": "KI-Kompetenz",
     "Verify ↗": "Verifizieren ↗",
     "10 — Documents": "10 — Dokumente",
+    "07 — Articles": "07 — Artikel",
+    "08 — Recognition": "08 — Auszeichnungen",
+    "09 — Toolkit": "09 — Kompetenzen",
+    "10 — Philosophy": "10 — Philosophie",
+    "11 — Documents": "11 — Dokumente",
+    "09 — Articles": "09 — Artikel",
+    "Read article ↗": "Artikel lesen ↗",
     "11 — Contact": "11 — Kontakt",
+    "Articles": "Artikel",
+    "11 — Writing": "11 — Beiträge",
+    "Articles & newsletter": "Artikel & Newsletter",
+    "Articles, newsletter editions, and opinion pieces published on LinkedIn and Medium. Academic papers are listed separately under Research.": "Artikel, Newsletter-Ausgaben und Meinungsbeiträge auf LinkedIn und Medium. Wissenschaftliche Arbeiten stehen separat unter Forschung.",
+    "More writing on": "Weitere Beiträge auf",
+    "and": "und",
+    "New articles and newsletter editions will appear here.": "Neue Artikel und Newsletter-Ausgaben erscheinen hier.",
+    "Read ↗": "Lesen ↗",
+    "Subscribe ↗": "Abonnieren ↗",
+    "Newsletter": "Newsletter",
+    "Article": "Artikel",
+    "12 — Contact": "12 — Kontakt",
     "Resume & CV": "Resume & Lebenslauf",
     "A quick overview of my background is available in three formats — a concise one-page resume for fast screening, a detailed academic CV with the complete record of publications, certifications, and engagements, and a standardised Europass CV for European applications. Download whichever fits your purpose.": "Ein schneller Überblick über meinen Hintergrund ist in drei Formaten verfügbar — ein kompaktes einseitiges Resume für die schnelle Durchsicht, ein ausführlicher akademischer Lebenslauf mit der vollständigen Übersicht über Publikationen, Zertifikate und Engagements, sowie ein standardisierter Europass-Lebenslauf für europäische Bewerbungen. Laden Sie herunter, was zu Ihrem Zweck passt.",
     "A concise one-page summary of my experience, leadership, and key achievements — built for quick screening.": "Eine kompakte einseitige Zusammenfassung meiner Erfahrung, Führung und wichtigsten Erfolge — für die schnelle Durchsicht.",
@@ -2462,7 +2618,11 @@ const D = {
     "An introduction to managing business operations.": "Einführung in die Steuerung von Betriebs­abläufen.",
     "Foundations of starting and planning a project.": "Grundlagen für den Start und die Planung von Projekten.",
     "Professional-level generative AI knowledge for Oracle Cloud.": "Generative KI für Oracle Cloud auf Profi-Niveau.",
-    "Foundational AI knowledge for Oracle Cloud.": "KI-Grundlagen für Oracle Cloud."
+    "Foundational AI knowledge for Oracle Cloud.": "KI-Grundlagen für Oracle Cloud.",
+    "Leading across cultures and personal growth.": "Führen über Kulturen hinweg und persönliche Entwicklung.",
+    "Practical AI skills for everyday work.": "Praktische KI-Kompetenzen für den Arbeitsalltag.",
+    "Global Leadership": "Globale Führung",
+    "AI Skills": "KI-Kompetenzen"
   },
   "fr": {
     "About": "À propos",
@@ -2547,7 +2707,26 @@ const D = {
     "AI Literacy": "Culture IA",
     "Verify ↗": "Vérifier ↗",
     "10 — Documents": "10 — Documents",
+    "07 — Articles": "07 — Articles",
+    "08 — Recognition": "08 — Distinctions",
+    "09 — Toolkit": "09 — Compétences",
+    "10 — Philosophy": "10 — Philosophie",
+    "11 — Documents": "11 — Documents",
+    "09 — Articles": "09 — Articles",
+    "Read article ↗": "Lire l'article ↗",
     "11 — Contact": "11 — Contact",
+    "Articles": "Articles",
+    "11 — Writing": "11 — Écrits",
+    "Articles & newsletter": "Articles & newsletter",
+    "Articles, newsletter editions, and opinion pieces published on LinkedIn and Medium. Academic papers are listed separately under Research.": "Articles, éditions de la newsletter et tribunes publiés sur LinkedIn et Medium. Les travaux académiques figurent à part, dans Recherche.",
+    "More writing on": "D'autres textes sur",
+    "and": "et",
+    "New articles and newsletter editions will appear here.": "Les nouveaux articles et éditions de la newsletter apparaîtront ici.",
+    "Read ↗": "Lire ↗",
+    "Subscribe ↗": "S'abonner ↗",
+    "Newsletter": "Newsletter",
+    "Article": "Article",
+    "12 — Contact": "12 — Contact",
     "Resume & CV": "Résumé & CV",
     "A quick overview of my background is available in three formats — a concise one-page resume for fast screening, a detailed academic CV with the complete record of publications, certifications, and engagements, and a standardised Europass CV for European applications. Download whichever fits your purpose.": "Un aperçu rapide de mon parcours est disponible en trois formats — un résumé concis d'une page pour une lecture rapide, un CV académique détaillé avec l'ensemble des publications, certifications et engagements, et un CV Europass standardisé pour les candidatures européennes. Téléchargez celui qui correspond à votre besoin.",
     "A concise one-page summary of my experience, leadership, and key achievements — built for quick screening.": "Une synthèse concise d'une page de mon expérience, de mon leadership et de mes principales réalisations — conçue pour une lecture rapide.",
@@ -2698,7 +2877,11 @@ const D = {
     "An introduction to managing business operations.": "Introduction à la gestion des opérations.",
     "Foundations of starting and planning a project.": "Bases du lancement et de la planification de projets.",
     "Professional-level generative AI knowledge for Oracle Cloud.": "Expertise en IA générative pour Oracle Cloud.",
-    "Foundational AI knowledge for Oracle Cloud.": "Bases de l’IA pour Oracle Cloud."
+    "Foundational AI knowledge for Oracle Cloud.": "Bases de l’IA pour Oracle Cloud.",
+    "Leading across cultures and personal growth.": "Diriger entre les cultures et développement personnel.",
+    "Practical AI skills for everyday work.": "Compétences IA pratiques pour le travail au quotidien.",
+    "Global Leadership": "Leadership mondial",
+    "AI Skills": "Compétences IA"
   },
   "it": {
     "About": "Chi sono",
@@ -2783,7 +2966,26 @@ const D = {
     "AI Literacy": "Competenze IA",
     "Verify ↗": "Verifica ↗",
     "10 — Documents": "10 — Documenti",
+    "07 — Articles": "07 — Articoli",
+    "08 — Recognition": "08 — Riconoscimenti",
+    "09 — Toolkit": "09 — Competenze",
+    "10 — Philosophy": "10 — Filosofia",
+    "11 — Documents": "11 — Documenti",
+    "09 — Articles": "09 — Articoli",
+    "Read article ↗": "Leggi l'articolo ↗",
     "11 — Contact": "11 — Contatti",
+    "Articles": "Articoli",
+    "11 — Writing": "11 — Scritti",
+    "Articles & newsletter": "Articoli & newsletter",
+    "Articles, newsletter editions, and opinion pieces published on LinkedIn and Medium. Academic papers are listed separately under Research.": "Articoli, edizioni della newsletter e opinioni pubblicati su LinkedIn e Medium. Le pubblicazioni accademiche sono elencate a parte in Ricerca.",
+    "More writing on": "Altri scritti su",
+    "and": "e",
+    "New articles and newsletter editions will appear here.": "I nuovi articoli e le edizioni della newsletter appariranno qui.",
+    "Read ↗": "Leggi ↗",
+    "Subscribe ↗": "Iscriviti ↗",
+    "Newsletter": "Newsletter",
+    "Article": "Articolo",
+    "12 — Contact": "12 — Contatti",
     "Resume & CV": "Resume & CV",
     "A quick overview of my background is available in three formats — a concise one-page resume for fast screening, a detailed academic CV with the complete record of publications, certifications, and engagements, and a standardised Europass CV for European applications. Download whichever fits your purpose.": "Una panoramica rapida del mio percorso è disponibile in tre formati — un resume sintetico di una pagina per una lettura veloce, un CV accademico dettagliato con l'elenco completo di pubblicazioni, certificazioni e impegni, e un CV Europass standardizzato per le candidature europee. Scarica quello più adatto al tuo scopo.",
     "A concise one-page summary of my experience, leadership, and key achievements — built for quick screening.": "Una sintesi di una pagina della mia esperienza, leadership e principali risultati — pensata per una valutazione rapida.",
@@ -2933,7 +3135,11 @@ const D = {
     "An introduction to managing business operations.": "Introduzione alla gestione delle operazioni aziendali.",
     "Foundations of starting and planning a project.": "Basi per avviare e pianificare un progetto.",
     "Professional-level generative AI knowledge for Oracle Cloud.": "Competenze professionali in IA generativa per Oracle Cloud.",
-    "Foundational AI knowledge for Oracle Cloud.": "Basi di IA per Oracle Cloud."
+    "Foundational AI knowledge for Oracle Cloud.": "Basi di IA per Oracle Cloud.",
+    "Leading across cultures and personal growth.": "Guidare tra culture diverse e crescita personale.",
+    "Practical AI skills for everyday work.": "Competenze pratiche di IA per il lavoro quotidiano.",
+    "Global Leadership": "Leadership globale",
+    "AI Skills": "Competenze IA"
   },
   "es": {
     "About": "Sobre mí",
@@ -3018,7 +3224,26 @@ const D = {
     "AI Literacy": "Competencia en IA",
     "Verify ↗": "Verificar ↗",
     "10 — Documents": "10 — Documentos",
+    "07 — Articles": "07 — Artículos",
+    "08 — Recognition": "08 — Reconocimientos",
+    "09 — Toolkit": "09 — Competencias",
+    "10 — Philosophy": "10 — Filosofía",
+    "11 — Documents": "11 — Documentos",
+    "09 — Articles": "09 — Artículos",
+    "Read article ↗": "Leer artículo ↗",
     "11 — Contact": "11 — Contacto",
+    "Articles": "Artículos",
+    "11 — Writing": "11 — Escritos",
+    "Articles & newsletter": "Artículos y newsletter",
+    "Articles, newsletter editions, and opinion pieces published on LinkedIn and Medium. Academic papers are listed separately under Research.": "Artículos, ediciones del newsletter y textos de opinión publicados en LinkedIn y Medium. Los trabajos académicos aparecen por separado en Investigación.",
+    "More writing on": "Más textos en",
+    "and": "y",
+    "New articles and newsletter editions will appear here.": "Aquí aparecerán los nuevos artículos y ediciones del newsletter.",
+    "Read ↗": "Leer ↗",
+    "Subscribe ↗": "Suscribirse ↗",
+    "Newsletter": "Newsletter",
+    "Article": "Artículo",
+    "12 — Contact": "12 — Contacto",
     "Resume & CV": "Resume & CV",
     "A quick overview of my background is available in three formats — a concise one-page resume for fast screening, a detailed academic CV with the complete record of publications, certifications, and engagements, and a standardised Europass CV for European applications. Download whichever fits your purpose.": "Un resumen rápido de mi trayectoria está disponible en tres formatos — un resume conciso de una página para una revisión rápida, un CV académico detallado con el registro completo de publicaciones, certificaciones y participaciones, y un CV Europass estandarizado para solicitudes europeas. Descarga el que mejor se adapte a tu propósito.",
     "A concise one-page summary of my experience, leadership, and key achievements — built for quick screening.": "Un resumen conciso de una página de mi experiencia, liderazgo y logros clave — pensado para una revisión rápida.",
@@ -3168,7 +3393,11 @@ const D = {
     "An introduction to managing business operations.": "Introducción a la gestión de operaciones empresariales.",
     "Foundations of starting and planning a project.": "Bases para iniciar y planificar un proyecto.",
     "Professional-level generative AI knowledge for Oracle Cloud.": "Conocimientos profesionales de IA generativa para Oracle Cloud.",
-    "Foundational AI knowledge for Oracle Cloud.": "Fundamentos de IA para Oracle Cloud."
+    "Foundational AI knowledge for Oracle Cloud.": "Fundamentos de IA para Oracle Cloud.",
+    "Leading across cultures and personal growth.": "Liderar entre culturas y crecimiento personal.",
+    "Practical AI skills for everyday work.": "Habilidades prácticas de IA para el trabajo diario.",
+    "Global Leadership": "Liderazgo global",
+    "AI Skills": "Habilidades de IA"
   }
 };
 
